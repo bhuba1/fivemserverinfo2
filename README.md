@@ -1,1 +1,1 @@
-# FiveM Serverinfo 2
+# FiveM Server info 2
