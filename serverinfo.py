@@ -26,6 +26,7 @@ options = Options()
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options)
 driver.get(serverList[0])
+time.sleep(1)
 
 def getData(url):
     soup = BeautifulSoup(driver.page_source,'html.parser')
@@ -37,6 +38,9 @@ def getServerName(soup):
         serverName = soup.findAll("div", {"class": "title"})[0].getText()
     except (IndexError):
         print ("The page didn't loaded properly :(")
+        print(soup)
+        #time.sleep(1)
+        #getServerName(soup)
         sys.exit();
     return serverName
 
